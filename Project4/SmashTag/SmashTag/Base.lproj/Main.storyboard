@@ -124,11 +124,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eKe-hc-1aW" id="0Va-MK-RZx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V60-PL-P2Z">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="149.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -157,6 +157,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="tweetImage" destination="nmW-fx-gYy" id="vnk-OS-2LA"/>
+                                    <segue destination="xuX-Kn-3kR" kind="show" identifier="Zoomed View" id="mDl-u3-oGt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -169,6 +170,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgj-fO-XKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765.5999999999999" y="43.628185907046479"/>
+        </scene>
+        <!--Zoom Image View Controller-->
+        <scene sceneID="4t6-3H-LfT">
+            <objects>
+                <viewController id="xuX-Kn-3kR" customClass="ZoomImageViewController" customModule="SmashTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ecr-84-Fh3"/>
+                        <viewControllerLayoutGuide type="bottom" id="w71-I4-kuX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sGb-0d-7If">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVK-zq-wsI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pVK-zq-wsI" firstAttribute="top" secondItem="sGb-0d-7If" secondAttribute="top" id="2eJ-PQ-xZV"/>
+                            <constraint firstItem="pVK-zq-wsI" firstAttribute="bottom" secondItem="w71-I4-kuX" secondAttribute="top" id="6xg-l8-Plm"/>
+                            <constraint firstItem="pVK-zq-wsI" firstAttribute="leading" secondItem="sGb-0d-7If" secondAttribute="leading" id="EUw-if-8ft"/>
+                            <constraint firstAttribute="trailing" secondItem="pVK-zq-wsI" secondAttribute="trailing" id="baC-1L-876"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="pVK-zq-wsI" id="6MF-er-7Nd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGl-LE-Nxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605.5999999999999" y="-6.746626686656672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aQl-it-O0G">

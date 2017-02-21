@@ -16,6 +16,7 @@
 		C26ED3F81E505C6100586D80 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26ED3F71E505C6100586D80 /* TweetTableViewCell.swift */; };
 		C26F0C111E5C10790056C58A /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C26F0C101E5C10790056C58A /* Twitter.framework */; };
 		C26F0C121E5C10790056C58A /* Twitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C26F0C101E5C10790056C58A /* Twitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C26F0C141E5C26500056C58A /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F0C131E5C26500056C58A /* ZoomImageViewController.swift */; };
 		C2A13A701E5680C700AFB64E /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A13A6F1E5680C700AFB64E /* ImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		C26ED3F11E50451500586D80 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		C26ED3F71E505C6100586D80 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		C26F0C101E5C10790056C58A /* Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C26F0C131E5C26500056C58A /* ZoomImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
 		C2A13A6F1E5680C700AFB64E /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			children = (
 				C26ED3F01E50447200586D80 /* Supporting Files */,
 				C26ED3E21E50442200586D80 /* Main.storyboard */,
+				C26F0C131E5C26500056C58A /* ZoomImageViewController.swift */,
 				C2A13A6F1E5680C700AFB64E /* ImageTableViewCell.swift */,
 				C26ED3F71E505C6100586D80 /* TweetTableViewCell.swift */,
 				C26ED3F11E50451500586D80 /* TweetTableViewController.swift */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26ED3DF1E50442200586D80 /* AppDelegate.swift in Sources */,
+				C26F0C141E5C26500056C58A /* ZoomImageViewController.swift in Sources */,
 				C26ED3F21E50451500586D80 /* TweetTableViewController.swift in Sources */,
 				C2A13A701E5680C700AFB64E /* ImageTableViewCell.swift in Sources */,
 				C26ED3F81E505C6100586D80 /* TweetTableViewCell.swift in Sources */,
