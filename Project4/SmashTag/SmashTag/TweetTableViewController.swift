@@ -62,7 +62,6 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    
 
     // MARK: - Table view data source
 

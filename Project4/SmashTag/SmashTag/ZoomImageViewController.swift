@@ -26,27 +26,21 @@ class ZoomImageViewController: UIViewController, UIScrollViewDelegate {
         didSet {
             imageView.image = imageForView!
             imageView.sizeToFit()
-            scrollView?.contentSize = imageView.frame.size
+            
             //tableView.bounds.size.width / CGFloat(aspectRatio)
             let ratio = imageForView!.size.height / imageForView!.size.width
             imageView.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY, width: self.view.bounds.width, height: self.view.bounds.width * ratio)
+            scrollView?.contentSize = imageView.frame.size
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
-        let centerPoint = CGPoint(x: scrollView.bounds.width / 2, y: scrollView.bounds.height / 2)
-        //imageView.center = scrollView.center
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        //scrollView.center = CGPoint(x: scrollView.frame.size.width/2, y: scrollView.frame.size.height / 2)
-        //imageView.center = scrollView.center
     }
 
 }

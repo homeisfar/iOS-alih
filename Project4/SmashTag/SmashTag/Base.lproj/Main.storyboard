@@ -124,11 +124,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eKe-hc-1aW" id="0Va-MK-RZx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V60-PL-P2Z">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="149"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -136,6 +136,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Rlg-oo-N8f" kind="show" identifier="Hashtag or User Segue" id="rSn-za-ias"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image Cell" id="Wwy-rc-Udy" customClass="ImageTableViewCell" customModule="SmashTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="178" width="375" height="150"/>
@@ -169,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgj-fO-XKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5999999999999" y="43.628185907046479"/>
+            <point key="canvasLocation" x="1876" y="-7"/>
         </scene>
         <!--Zoom Image View Controller-->
         <scene sceneID="4t6-3H-LfT">
@@ -222,4 +225,7 @@
             <point key="canvasLocation" x="175" y="44"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rSn-za-ias"/>
+    </inferredMetricsTieBreakers>
 </document>

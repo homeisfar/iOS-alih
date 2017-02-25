@@ -6,15 +6,6 @@
 //  Copyright © 2017 Ali Homafar. All rights reserved.
 //
 
-/*
- TODO
-    When the user touches a Tweet, segue to a new UITableViewController which has four sections listing the “mentions” in the Tweet: images, hashtags, users and urls. The first section displays (one per row) any images attached to the Tweet (found in the media variable in the CS193pTwitter.Tweet class). The last three sections list the items described in Required Task 1 (again, one per row).
-    
-    Images in the table above should be shown in their normal aspect ratio and should use the entire width of the table view (a standard surrounding border is acceptable).
-*/
-
-
-
 import UIKit
 import Twitter
 
@@ -74,8 +65,9 @@ class MentionsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // tableView.estimatedRowHeight = tableView.rowHeight
-        // tableView.rowHeight = UITableViewAutomaticDimension
+        // this is not redundant due to rotating screens
+         tableView.estimatedRowHeight = tableView.rowHeight
+         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     // MARK: - Table view data source
@@ -134,8 +126,6 @@ class MentionsTableViewController: UITableViewController {
         
         switch mentionCell {
         case .Image(_, let aspectRatio):
-            print ("\(aspectRatio)")
-            
             //aspectRatio = width / height
             return tableView.bounds.size.width / CGFloat(aspectRatio)
         case .Keyword(_):
@@ -192,7 +182,28 @@ class MentionsTableViewController: UITableViewController {
                 let image = (sender as? ImageTableViewCell)
                zvc.imageForView = image?.tweetImage.image
             }
+        } else if segue.identifier == "Hashtag or User Segue" {
+            if let searchVC = segue.destination as? TweetTableViewController {
+                let searchCell = (sender as? UITableViewCell)
+                let searchText = searchCell?.textLabel
+                searchVC.searchText = searchText?.text!
+            }
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "Hashtag or User Segue" {
+            if let searchCell = (sender as? UITableViewCell) {
+                let indexPath = tableView.indexPath(for: searchCell)
+                if mentions[(indexPath?.section)!].title == "URLs" {
+                    let url = searchCell.textLabel?.text
+                    if (url?.hasPrefix("http"))! {
+                        UIApplication.shared.open(URL(string: url!)!)
+                    }
+                    return false
+                }
+            }
+        }
+        return true
+    }
 }
