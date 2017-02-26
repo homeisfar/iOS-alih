@@ -13,10 +13,11 @@ class ZoomImageViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.contentSize = imageView.frame.size
-            
             scrollView.delegate = self
             scrollView.minimumZoomScale = 0.10
             scrollView.maximumZoomScale = 2.00
+            scrollView.showsHorizontalScrollIndicator = false
+            scrollView.showsVerticalScrollIndicator = false
         }
     }
     
@@ -42,5 +43,4 @@ class ZoomImageViewController: UIViewController, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-
 }
